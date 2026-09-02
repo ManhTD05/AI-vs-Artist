@@ -126,9 +126,32 @@ site-header {
   .section-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 680px) {
+  .header-inner { gap: .55rem; }
   .brand-label { display: none; }
-  .site-nav { max-width: calc(100vw - 72px); gap: 1rem; }
-  .site-nav a { font-size: .74rem; }
+  .brand-mark { width: 28px; height: 28px; padding: 3px; }
+  .site-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
+    display: grid;
+    grid-template-columns: .9fr 1fr 1.45fr .8fr;
+    align-items: stretch;
+    gap: 0;
+    overflow: visible;
+  }
+  .site-nav a {
+    min-width: 0;
+    justify-content: center;
+    padding-inline: .16rem;
+    font-size: clamp(.62rem, 2.65vw, .72rem);
+    text-align: center;
+    letter-spacing: -.015em;
+  }
+  .site-nav a::after { left: 12%; right: 12%; }
   .page-hero, .section, .section.compact, .section.loose { padding-block: 3rem; }
   .page-next-inner, .footer-inner { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 390px) {
+  .site-nav a { font-size: .59rem; }
 }

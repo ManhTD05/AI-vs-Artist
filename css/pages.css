@@ -604,3 +604,122 @@
 /* Direct media showcase: no redundant section intro. */
 .infographic-feature { padding-top: clamp(2.2rem, 4vw, 4rem); }
 .infographic-feature > .resource-grid { margin-top: 0; }
+
+/* ===== Mobile fix: header + Opportunity/Risk pairs ===== */
+@media (max-width: 620px) {
+  .header-inner { gap: .55rem; }
+  .brand-mark { width: 28px; height: 28px; padding: 3px; }
+
+  .site-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: none;
+    display: grid;
+    grid-template-columns: .9fr 1fr 1.45fr .8fr;
+    align-items: stretch;
+    gap: 0;
+    overflow: visible;
+  }
+
+  .site-nav a {
+    min-width: 0;
+    justify-content: center;
+    padding-inline: .16rem;
+    font-size: clamp(.62rem, 2.65vw, .72rem);
+    text-align: center;
+    letter-spacing: -.015em;
+  }
+
+  .site-nav a::after { left: 12%; right: 12%; }
+
+  .impact-balance-section .balance-pairs { border-radius: 14px; }
+
+  .impact-balance-section .balance-pair {
+    grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr) !important;
+    align-items: stretch;
+    padding: 0 .35rem !important;
+  }
+
+  .impact-balance-section .pair-button,
+  .impact-balance-section .pair-button.right {
+    min-width: 0;
+    min-height: 72px;
+    gap: .45rem;
+    padding: .75rem .35rem !important;
+    align-items: center;
+  }
+
+  .impact-balance-section .pair-button.opportunity {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .impact-balance-section .pair-button.right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .impact-balance-section .pair-button strong {
+    min-width: 0;
+    font-size: clamp(.72rem, 3.25vw, .86rem) !important;
+    line-height: 1.32;
+    overflow-wrap: anywhere;
+  }
+
+  .impact-balance-section .pair-button .icon {
+    width: 1.18rem;
+    height: 1.18rem;
+    flex: 0 0 auto;
+  }
+
+  .impact-balance-section .pair-connector { min-height: 0 !important; }
+
+  .impact-balance-section .pair-connector::before {
+    left: 0 !important;
+    right: 0 !important;
+    top: 50% !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: 1px !important;
+  }
+
+  .impact-balance-section .pair-connector span,
+  .impact-balance-section .balance-pair:has(.pair-button:hover) .pair-connector span {
+    padding: .16rem .25rem;
+    font-size: .52rem !important;
+    transform: none !important;
+  }
+
+  .impact-balance-section .balance-axis {
+    gap: .55rem;
+    margin-top: 1.2rem;
+    padding: .8rem 0;
+  }
+
+  .impact-balance-section .axis-core { width: 48px; height: 48px; }
+  .impact-balance-section .axis-side { font-size: .66rem; }
+
+  .impact-balance-section .balance-detail {
+    margin-top: .8rem;
+    padding: 1.15rem;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 390px) {
+  .site-nav a { font-size: .59rem; }
+
+  .impact-balance-section .balance-pair {
+    grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr) !important;
+    padding-inline: .25rem !important;
+  }
+
+  .impact-balance-section .pair-button,
+  .impact-balance-section .pair-button.right {
+    min-height: 68px;
+    padding-inline: .25rem !important;
+  }
+
+  .impact-balance-section .pair-button strong { font-size: .7rem !important; }
+}
+
